@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    # Trigger background job to process post analytics
+    PostAnalyticsProcessorJob.perform_later(@post.id)
   end
 
   def new
