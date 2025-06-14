@@ -24,5 +24,17 @@
 
       <%= yield %>
     </div>
+
+    <footer class="main-footer">
+      <div class="container">
+        <nav class="footer-nav">
+          <%= link_to "Posts", root_path, class: "nav-link #{'active' if current_page?(root_path) || request.path.start_with?('/posts')}" %>
+          <%= link_to "Stats", stats_path, class: "nav-link #{'active' if current_page?(stats_path)}" %>
+        </nav>
+        <div class="footer-info">
+          <p>&copy; <%= Date.current.year %> Blog Demo - Powered by Rails & Heroku</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

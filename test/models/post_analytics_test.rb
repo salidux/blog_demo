@@ -6,8 +6,7 @@ class PostAnalyticsTest < ActiveSupport::TestCase
     @analytics = PostAnalytics.create!(
       post: @post,
       view_count: 0,
-      reading_time: 1,
-      average_time_spent: 0
+      reading_time: 1
     )
   end
 
@@ -30,8 +29,20 @@ class PostAnalyticsTest < ActiveSupport::TestCase
     assert_not @analytics.valid?
   end
 
-  test "average_time_spent should be non-negative" do
-    @analytics.average_time_spent = -1
-    assert_not @analytics.valid?
+  test "should allow zero values for view_count and reading_time" do
+    @analytics.view_count = 0
+    @analytics.reading_time = 0
+    assert @analytics.valid?
+  end
+
+  test "should update last_viewed_at timestamp" do
+    old_time = 1.day.ago
+    @analytics.last_viewed_at = old_time
+    @analytics.save!
+
+    new_time = Time.current
+    @analytics.update!(last_viewed_at: new_time)
+
+    assert @analytics.last_viewed_at > old_time
   end
 end
