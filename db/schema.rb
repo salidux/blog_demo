@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_06_14_185822) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_14_192238) do
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_14_185822) do
     t.integer "view_count"
     t.integer "reading_time"
     t.datetime "last_viewed_at"
-    t.integer "average_time_spent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_analytics_on_post_id"

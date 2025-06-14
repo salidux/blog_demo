@@ -1,0 +1,20 @@
+I will talk in a meetup about Heroku. My plan is to do a short demo of how to deploy an app to Heroku. I'm crating a demo app to show how to deploy an app to Heroku. I want the app to be a simple Blog app with a few features.
+
+something I'd like to show is how background jobs works. Create a simple Bacground job using Delayed Job. I want the jobs persisted in the PG database. 
+The Idea I want to implement is:
+Post Analytics Processing
+- Track and aggregate post views
+- Calculate reading time based on content length
+- Generate weekly/monthly statistics about post popularity
+- This would be triggered after a post is viewed
+
+Check the code and see the current state of the development.
+
+I want: 
+- Add a footer to switch between Posts and Stats
+- The stats page shows a table with the post title (first 30 characters), and then one column for each stats you will calculate. 
+- The stats are calculated on each post view. 
+- It doesn't require JavaScript. On view, the BW job is triggered to calculate the stats. 
+- Reading time is calculated based on the content length. 
+- disregard average_time_spent. Let's delete it.
+- Add commits that are easy to follow because I don't want one commit at the end with everything. I should understand what each commit does. Also, add tests for new classes and code and make sure tests pass before committing 
