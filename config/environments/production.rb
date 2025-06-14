@@ -70,8 +70,8 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
-  # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter = :resque
+  # Use Delayed Job for background processing in production.
+  config.active_job.queue_adapter = :delayed_job
   config.active_job.queue_name_prefix = "blog_demo_production"
 
   # Disable caching for Action Mailer templates even if Action Controller
