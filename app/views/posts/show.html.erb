@@ -1,2 +1,15 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post">
+  <h1><%= @post.title %></h1>
+  
+  <div class="content">
+    <%= simple_format(@post.content) %>
+  </div>
+
+  <div class="actions">
+    <%= link_to "Back to Posts", posts_path, class: "btn" %>
+    <%= link_to "Edit", edit_post_path(@post), class: "btn" %>
+    <%= link_to "Delete", post_path(@post), 
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "btn btn-danger" %>
+  </div>
+</div>
