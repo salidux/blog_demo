@@ -106,12 +106,16 @@ heroku config:set RAILS_ENV=production
 heroku config:set RACK_ENV=production
 ```
 
-#### 4. Configure Background Jobs
-Add a `Procfile` in your project root:
-```bash
-echo "web: bundle exec puma -C config/puma.rb
-worker: bundle exec rake jobs:work" > Procfile
+#### 4. Automatic Database Migrations
+The `Procfile` includes a `release` command that automatically runs database migrations before each deployment:
+
 ```
+release: bundle exec rails db:migrate
+web: bundle exec puma -C config/puma.rb
+worker: bundle exec rake jobs:work
+```
+
+**Important**: Heroku runs the release command before starting your application, ensuring your database is always up-to-date with the latest migrations. This happens automatically - no manual intervention required!
 
 #### 5. Deploy Application
 ```bash
@@ -119,13 +123,10 @@ worker: bundle exec rake jobs:work" > Procfile
 git add .
 git commit -m "Prepare for Heroku deployment"
 
-# Push to Heroku
+# Push to Heroku (migrations will run automatically via release command)
 git push heroku main
 
-# Run database migrations
-heroku run rails db:migrate
-
-# Seed the database with sample data
+# Seed the database with sample data (optional, for demo purposes)
 heroku run rails db:seed
 ```
 
@@ -147,11 +148,25 @@ heroku open
 heroku info
 ```
 
+### 🔄 Heroku Deployment Process
+
+When you push to Heroku, the following happens automatically:
+
+1. **Build Phase** - Dependencies are installed
+2. **Release Phase** - `bundle exec rails db:migrate` runs automatically
+3. **Deploy Phase** - New version goes live with updated database schema
+4. **Scale Phase** - Web and worker dynos start
+
+This ensures your database is always properly migrated before the new code goes live!
+
 ### Monitoring & Debugging
 
 ```bash
 # View application logs
 heroku logs --tail
+
+# Check release command logs (to see migration output)
+heroku logs --source=release --tail
 
 # Check background job status
 heroku run rails console
