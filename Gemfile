@@ -21,6 +21,7 @@ gem "jbuilder"
 
 # Background job processing
 gem "delayed_job_active_record"
+gem "daemons"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
