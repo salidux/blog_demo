@@ -1,0 +1,19 @@
+.gitignore
+  s_f96ef2144860b5::t_fbd448e8b90f0d 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "9ca467d22ffdb2985149f75f1bb5cfb865eeee2b",
+  "prompts": {},
+  "sessions": {
+    "s_f96ef2144860b5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf265864-ec31-4cdf-877d-d83d35764f3f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Diego Salido <diego.salido@quimbee.com>"
+    }
+  }
+}
