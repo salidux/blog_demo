@@ -5,11 +5,16 @@
     <%= simple_format(@post.content) %>
   </div>
 
-  <div class="reactions">
-    <p class="score">Score: <%= @post.score %></p>
-    <%= button_to "👍 Like (#{@post.like_count})", like_post_path(@post), class: "btn" %>
-    <%= button_to "👎 Dislike (#{@post.dislike_count})", dislike_post_path(@post), class: "btn" %>
-  </div>
+  <section class="reactions">
+    <h2 class="reactions-title">Reactions</h2>
+    <div class="reactions-row">
+      <p class="score">Score: <%= @post.score %></p>
+      <div class="reactions-controls">
+        <%= button_to "👍 Like (#{@post.like_count})", like_post_path(@post), class: "btn" %>
+        <%= button_to "👎 Dislike (#{@post.dislike_count})", dislike_post_path(@post), class: "btn" %>
+      </div>
+    </div>
+  </section>
 
   <div class="actions">
     <%= link_to "Back to Posts", posts_path, class: "btn" %>

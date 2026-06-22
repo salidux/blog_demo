@@ -77,8 +77,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @post.update!(like_count: 10, dislike_count: 3)
     get post_url(@post)
     assert_response :success
-    assert_select "p.score", text: /Score: 7/
-    assert_select "form[action=?]", like_post_path(@post)
-    assert_select "form[action=?]", dislike_post_path(@post)
+    assert_select "section.reactions" do
+      assert_select "p.score", text: /Score: 7/
+      assert_select "form[action=?]", like_post_path(@post)
+      assert_select "form[action=?]", dislike_post_path(@post)
+    end
   end
 end
