@@ -1,0 +1,48 @@
+test/models/post_test.rb
+  s_f96ef2144860b5::t_d73aa3c6bbaf61 24-39
+config/routes.rb
+  s_f96ef2144860b5::t_07e68141749381 3-8
+db/migrate/20260622220510_add_reaction_counts_to_posts.rb
+  s_f96ef2144860b5::t_c50091262752b1 1-2,5-6
+  s_f96ef2144860b5::t_409706071f2bd9 3-4
+test/controllers/posts_controller_test.rb
+  s_f96ef2144860b5::t_48aea57e50b31b 48-83
+app/controllers/posts_controller.rb
+  s_f96ef2144860b5::t_f5338bc86d6c0d 2
+  s_f96ef2144860b5::t_a22ad2efbc2024 42-51
+app/models/post.rb
+  s_f96ef2144860b5::t_2c5afab1b7dc89 7-21
+app/views/posts/index.html.erb
+  s_f96ef2144860b5::t_e87e1c5f0bf059 8
+openspec/changes/posts-like-dislike/tasks.md
+  s_f96ef2144860b5::t_1ba30737ed4fbd 20-22
+  s_f96ef2144860b5::t_9606eb3dee6a40 26
+  s_f96ef2144860b5::t_3b5fd704e1c303 30-34
+  s_f96ef2144860b5::t_2afa22515d9c38 38
+  s_f96ef2144860b5::t_04196069090198 13-16
+  s_f96ef2144860b5::t_8a3f9593aa2616 8-9
+  s_f96ef2144860b5::t_7733a642460832 3-4
+app/views/posts/show.html.erb
+  s_f96ef2144860b5::t_90037d31345d67 8-13
+db/seeds.rb
+  s_f96ef2144860b5::t_7ee924dd613a77 36-38
+  s_f96ef2144860b5::t_8672535868855d 46-48
+  s_f96ef2144860b5::t_39e927e08d4a6a 26-28
+  s_f96ef2144860b5::t_7a1dc8226d37a5 55-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "78792b48deb55d807b0725b864718dfd3fa4345d",
+  "prompts": {},
+  "sessions": {
+    "s_f96ef2144860b5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf265864-ec31-4cdf-877d-d83d35764f3f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Diego Salido <diego.salido@quimbee.com>"
+    }
+  }
+}
