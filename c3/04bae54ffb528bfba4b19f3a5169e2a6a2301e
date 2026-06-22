@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "c304bae54ffb528bfba4b19f3a5169e2a6a2301e",
+  "prompts": {},
+  "humans": {
+    "h_56793bed1a3d82": {
+      "author": "Diego Salido <diego.salido@quimbee.com>"
+    }
+  }
+}
