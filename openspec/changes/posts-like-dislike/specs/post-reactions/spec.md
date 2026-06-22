@@ -59,7 +59,13 @@ The post index SHALL display each post's `score` as a single value. The like and
 ### Requirement: Reaction display and controls on the show page
 The post show page SHALL display the post's `score` together with its `like_count` and `dislike_count`, and SHALL present a like control and a dislike control. The controls SHALL function without client-side JavaScript.
 
+The `score` and the two controls SHALL be grouped into a single, visually distinct reactions section, laid out on one row, set apart from the article content and from the author actions (edit/delete).
+
 #### Scenario: Show page presents the full picture and controls
 - **WHEN** a visitor opens a post's show page
 - **THEN** the page displays the post's `score`, `like_count`, and `dislike_count`
 - **AND** the page presents a like control and a dislike control that submit without JavaScript
+
+#### Scenario: Reactions are a distinct single-row section
+- **WHEN** a visitor opens a post's show page
+- **THEN** the `score` and the like/dislike controls appear together in one labelled reactions section, on a single row, visually separated from the article content and the author actions

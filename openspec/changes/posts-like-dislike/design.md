@@ -35,6 +35,9 @@ The like/dislike controls render as `button_to`, which emits a real `<form metho
 ### 6. Seed backfill
 `db/seeds.rb` sets non-zero `like_count`/`dislike_count` on seeded posts so a fresh database demonstrates varied scores (including a negative one).
 
+### 7. Show-page reactions presentation (Layout B)
+The score and the two controls are grouped in a distinct, labelled "Reactions" section laid out on a single row: the `score` on the left, the like/dislike controls grouped on the right. The section is a tinted, bordered panel inside the post card, separating *reader* actions (react) from *author* actions (edit/delete) directly below. Layout is pure CSS — a `display: flex` row on the section container — since each `button_to` renders its own block-level `<form>`; no markup gymnastics and no JavaScript. *Alternatives considered:* a centered vote-pill with buttons flanking the score (more "voting widget", but splits the two controls), and a minimal hairline-ruled strip with no panel (lighter, but reads as less of a distinct section). Layout B reads left-to-right ("here's the verdict, here's how you weigh in") and keeps the controls grouped.
+
 ## Risks / Trade-offs
 
 - **Counts are inflatable (no dedup)** → Accepted, explicit non-goal. A reviewer seeing repeated-increment behavior should read it as intended, not a bug; the spec encodes it.

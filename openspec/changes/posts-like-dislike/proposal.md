@@ -9,7 +9,7 @@ Readers can view posts but have no way to signal whether they liked them, and au
 - Add a computed **`score`** (`like_count - dislike_count`) — a model method, not a stored column.
 - Display reactions in two places:
   - **Index page**: the single `score` value per post.
-  - **Show page**: the full picture — `score`, plus the `like_count` and `dislike_count` breakdown — next to the buttons.
+  - **Show page**: the full picture — `score`, plus the `like_count` and `dislike_count` breakdown — grouped with the buttons in a single, visually distinct reactions section laid out on one row.
 - Add endpoints to record a like or a dislike for a post.
 - Reactions are recorded **synchronously** on submit — unlike view tracking, they do **not** go through the Delayed Job worker, because a reaction is a direct user action whose result must be visible on the next page render.
 - Seed data is backfilled with like/dislike counts so the feature is visible on a fresh database.

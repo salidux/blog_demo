@@ -20,6 +20,8 @@
 - [x] 4.1 On the show page, add `button_to` like and dislike controls (POST, no JavaScript)
 - [x] 4.2 On the show page, display the `score` with the `like_count`/`dislike_count` breakdown next to the controls
 - [x] 4.3 On the index page, display each post's `score` as read-only text (no controls)
+- [ ] 4.4 Group the show-page `score` and controls into a single distinct "Reactions" section (Layout B: score left, controls grouped right, one row), separated from the author actions
+- [ ] 4.5 Add CSS for the reactions section: single-row flex layout and a tinted, bordered, labelled panel
 
 ## 5. Seed data
 
