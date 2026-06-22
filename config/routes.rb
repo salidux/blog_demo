@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "posts#index"
-  resources :posts
+  resources :posts do
+    member do
+      post :like
+      post :dislike
+    end
+  end
   get "stats", to: "stats#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -45,4 +45,42 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to posts_url
   end
+
+  test "like increments like_count and redirects back" do
+    assert_difference -> { @post.reload.like_count }, 1 do
+      post like_post_url(@post)
+    end
+    assert_response :redirect
+  end
+
+  test "dislike increments dislike_count and redirects back" do
+    assert_difference -> { @post.reload.dislike_count }, 1 do
+      post dislike_post_url(@post)
+    end
+    assert_response :redirect
+  end
+
+  test "repeated likes are unbounded (no dedup)" do
+    assert_difference -> { @post.reload.like_count }, 3 do
+      3.times { post like_post_url(@post) }
+    end
+  end
+
+  test "index shows the score" do
+    @post.update!(like_count: 10, dislike_count: 3)
+    get posts_url
+    assert_response :success
+    assert_select "p.score", text: /Score: 7/
+  end
+
+  test "show page shows score, counts, and reaction controls" do
+    @post.update!(like_count: 10, dislike_count: 3)
+    get post_url(@post)
+    assert_response :success
+    assert_select "section.reactions" do
+      assert_select "p.score", text: /Score: 7/
+      assert_select "form[action=?]", like_post_path(@post)
+      assert_select "form[action=?]", dislike_post_path(@post)
+    end
+  end
 end

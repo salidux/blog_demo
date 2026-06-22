@@ -116,6 +116,40 @@ body {
   background: #7f8c8d;
 }
 
+/* Reactions Section */
+.reactions {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: #f8f9fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+}
+.reactions-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #57606a;
+}
+.reactions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.reactions .score {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.reactions-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+.reactions-controls form {
+  margin: 0;
+}
+
 /* Footer Styles */
 .main-footer {
   background: #34495e;

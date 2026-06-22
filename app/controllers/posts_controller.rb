@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy, :like, :dislike ]
 
   def index
     @posts = Post.all
@@ -37,6 +37,16 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_url, notice: "Post was successfully deleted."
+  end
+
+  def like
+    @post.like!
+    redirect_back fallback_location: post_path(@post)
+  end
+
+  def dislike
+    @post.dislike!
+    redirect_back fallback_location: post_path(@post)
   end
 
   private

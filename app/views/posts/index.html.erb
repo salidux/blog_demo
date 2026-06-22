@@ -5,6 +5,7 @@
 <% @posts.each do |post| %>
   <div class="post">
     <h2><%= post.title %></h2>
+    <p class="score">Score: <%= post.score %></p>
     <p><%= truncate(post.content, length: 200) %></p>
     <div class="actions">
       <%= link_to "Read more", post_path(post) %>
