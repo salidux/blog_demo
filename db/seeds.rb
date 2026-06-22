@@ -23,7 +23,9 @@ posts = [
              "to deploying it to production. Rails provides a rich set of tools and conventions that make web development faster " +
              "and more enjoyable. We'll cover models, views, controllers, routing, database migrations, and much more. " +
              "By the end of this tutorial, you'll have a solid understanding of how to build robust web applications with Rails.",
-    published: true
+    published: true,
+    like_count: 30,
+    dislike_count: 4
   },
   {
     title: "Understanding Background Jobs with Delayed Job",
@@ -31,7 +33,9 @@ posts = [
              "Delayed Job is a popular Ruby gem that provides a simple way to run jobs asynchronously. " +
              "In this article, we'll learn how to set up Delayed Job with ActiveRecord, create custom jobs, " +
              "and monitor job execution. We'll also explore best practices for error handling and job retry logic.",
-    published: true
+    published: true,
+    like_count: 15,
+    dislike_count: 5
   },
   {
     title: "Deploying Rails Apps to Heroku",
@@ -39,14 +43,18 @@ posts = [
              "This step-by-step guide will walk you through the entire deployment process, from preparing your app " +
              "to configuring environment variables and setting up a PostgreSQL database. " +
              "We'll also cover how to manage different environments and troubleshoot common deployment issues.",
-    published: true
+    published: true,
+    like_count: 8,
+    dislike_count: 2
   },
   {
     title: "Advanced Rails Testing Strategies",
     content: "Testing is a crucial part of Rails development. In this article, we'll explore advanced testing techniques " +
              "including model testing, controller testing, integration testing, and system testing. " +
              "We'll learn how to use fixtures, factories, and mocks effectively to create maintainable test suites.",
-    published: false
+    published: false,
+    like_count: 2,
+    dislike_count: 9
   }
 ]
 

@@ -21,7 +21,20 @@ class PostTest < ActiveSupport::TestCase
     assert post.save
   end
 
-  # test "the truth" do
-  #   assert true
-  # end
+  test "score returns likes minus dislikes" do
+    post = Post.new(title: "Valid Title", content: "Some content", published: true, like_count: 7, dislike_count: 2)
+    assert_equal 5, post.score
+  end
+
+  test "score can be negative" do
+    post = Post.new(title: "Valid Title", content: "Some content", published: true, like_count: 1, dislike_count: 4)
+    assert_equal(-3, post.score)
+  end
+
+  test "new post defaults to zero counts and score" do
+    post = Post.create!(title: "Valid Title", content: "Some content", published: false)
+    assert_equal 0, post.like_count
+    assert_equal 0, post.dislike_count
+    assert_equal 0, post.score
+  end
 end
