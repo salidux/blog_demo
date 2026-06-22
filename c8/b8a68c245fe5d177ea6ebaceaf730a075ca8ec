@@ -1,0 +1,25 @@
+openspec/changes/posts-like-dislike/tasks.md
+  s_f96ef2144860b5::t_7f50a209a75636 23-24
+openspec/changes/posts-like-dislike/proposal.md
+  s_f96ef2144860b5::t_c8ccbacbcfdef9 12
+openspec/changes/posts-like-dislike/design.md
+  s_f96ef2144860b5::t_34aae34171b773 38-40
+openspec/changes/posts-like-dislike/specs/post-reactions/spec.md
+  s_f96ef2144860b5::t_140761c3a14b75 62-63,68-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "c8b8a68c245fe5d177ea6ebaceaf730a075ca8ec",
+  "prompts": {},
+  "sessions": {
+    "s_f96ef2144860b5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf265864-ec31-4cdf-877d-d83d35764f3f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Diego Salido <diego.salido@quimbee.com>"
+    }
+  }
+}
