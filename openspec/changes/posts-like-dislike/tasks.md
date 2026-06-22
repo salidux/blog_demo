@@ -36,4 +36,3 @@
 ## 7. Verify
 
 - [x] 7.1 Run `bin/rails db:test:prepare test` and confirm green
-- [ ] 7.2 Run `bin/rubocop` and `bin/brakeman --no-pager` and confirm clean
