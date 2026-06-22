@@ -1,0 +1,25 @@
+app/views/posts/show.html.erb
+  s_f96ef2144860b5::t_5750f6bc4bbaee 8-17
+test/controllers/posts_controller_test.rb
+  s_f96ef2144860b5::t_a295da21d29cb1 80-84
+openspec/changes/posts-like-dislike/tasks.md
+  s_f96ef2144860b5::t_b21dc71405515a 23-24
+app/assets/stylesheets/application.css
+  s_f96ef2144860b5::t_60014746d7b243 119-152
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "ee5ead7d854f845b57371f1a5e4d1f3087c2e9c3",
+  "prompts": {},
+  "sessions": {
+    "s_f96ef2144860b5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf265864-ec31-4cdf-877d-d83d35764f3f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Diego Salido <diego.salido@quimbee.com>"
+    }
+  }
+}
